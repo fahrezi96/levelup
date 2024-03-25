@@ -1,0 +1,152 @@
+:root {
+  --dark-blue: #2b224e;
+  --grey: #bdbdbd;
+  --white: #fff;
+  --black: #000;
+}
+
+@font-face {
+  font-family: 'PlusJakartaSans';
+  font-weight: normal;
+  src: url('./assets/fonts/plus-jakarta-sans/PlusJakartaSans-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'PlusJakartaSans';
+  font-weight: bold;
+  src: url('./assets/fonts/plus-jakarta-sans/PlusJakartaSans-Bold.ttf');
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  height: 58px;
+  width: 100%;
+  background-color: var(--grey);
+}
+
+aside {
+  background-color: var(--dark-blue);
+  width: 182px;
+  height: calc(100vh - 58px);
+  transition: all 0.3s;
+  overflow-x: hidden;
+}
+
+aside.close {
+  width: 35px;
+}
+
+aside > div {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+aside .toggle-aside {
+  cursor: pointer;
+}
+
+aside .toggle-aside .is-hide {
+  display: none;
+}
+
+aside .toggle-aside.close .is-hide {
+  margin-right: 1px;
+  display: inline-block;
+}
+
+aside .toggle-aside.close .is-show {
+  display: none;
+}
+
+aside .toggle-aside img {
+  filter: brightness(0.8);
+}
+
+aside .toggle-aside img:hover {
+  filter: none;
+}
+
+aside .main-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+aside .main-menu > li > a {
+  font-family: 'PlusJakartaSans';
+  color: var(--grey);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: normal;
+  box-sizing: border-box;
+  transition: all 0.3s;
+
+  width: 182px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+}
+
+aside .main-menu a:hover,
+aside .main-menu a.active {
+  font-weight: bold;
+  color: var(--white);
+}
+
+aside .main-menu a.active img:last-child {
+  transform: rotate(180deg);
+}
+
+aside .main-menu a span {
+  flex-grow: 1;
+}
+
+aside .main-menu a img {
+  filter: brightness(0.8);
+  transition: all 0.3s;
+}
+
+aside .main-menu a:hover img {
+  filter: none;
+}
+
+aside .sub-menu {
+  list-style-type: disc;
+  color: var(--white);
+  height: 0;
+  overflow-y: hidden;
+}
+
+aside .main-menu a.active + .sub-menu {
+  height: auto;
+}
+
+aside .sub-menu > li > a {
+  font-family: 'PlusJakartaSans';
+  color: var(--grey);
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: normal;
+  box-sizing: border-box;
+  transition: all 0.3s;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  padding-left: 0;
+}
+
+aside .sub-menu.level-one {
+  padding-left: 3rem;
+}
+
+aside .sub-menu.level-two {
+  padding-left: 1rem;
+}
