@@ -89,6 +89,12 @@ main {
   margin-bottom: 1rem;
 }
 
+@media only screen and (max-width: 1024px) {
+  .cards {
+    flex-direction: column;
+  }
+}
+
 .card {
   /* border: solid 1px var(--border); */
   border-radius: 12px;
@@ -264,7 +270,7 @@ footer {
 aside {
   background-color: var(--dark-blue);
   width: 182px;
-  height: calc(100vh - 58px);
+  min-height: calc(100vh - 58px);
   transition: all 0.3s;
   overflow-x: hidden;
 }
